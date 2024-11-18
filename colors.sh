@@ -2,6 +2,10 @@
 
 USERID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
+# above are color codes they are fixed. apply colors to the output result for better  view
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
@@ -16,10 +20,10 @@ CHECK_ROOT(){
 VALIDATION(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is failed please check"
+        echo "$2 is..$R failed$N please check"
         exit 1
     else
-        echo "$2 is success"
+        echo "$2 is....$G success$N"
 # $1 and $2 are inputs passed in the function call 1 input and 2 input
     fi
 }
