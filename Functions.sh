@@ -26,7 +26,7 @@ VALIDATION(){
 
 CHECK_ROOT
 
-dnf list installed git
+dnf list installed git 
 
 if [ $? -ne 0 ]
 then
@@ -41,13 +41,13 @@ echo "git is already installed"
 
 fi
 
-dnf list installed mysql -y
+dnf list installed mysql 
 
 if [ $? -ne 0 ]
 then
 echo "mysql is not installed please install mysql"
 
-dnf install mysql
+dnf install mysql -y
 
 VALIDATION $? "mysql installtion"
 
