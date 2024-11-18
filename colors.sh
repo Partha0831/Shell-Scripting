@@ -20,10 +20,10 @@ CHECK_ROOT(){
 VALIDATION(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is..$R failed$N please check"
+        echo "$2 is..$R failed $N please check"
         exit 1
     else
-        echo "$2 is....$G success$N"
+        echo "$2 is....$G success $N"
 # $1 and $2 are inputs passed in the function call 1 input and 2 input
     fi
 }
