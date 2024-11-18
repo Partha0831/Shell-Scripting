@@ -2,13 +2,29 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
-then
+CHECK_ROOT(){
+    if [ $USERID -ne 0 ]
+    then
 
-echo "please run as root user"
-exit 1
+        echo "please run as root user"
+        exit 1
 
-fi
+    fi
+    }
+
+
+VALIDATION(){
+    if [ $1 -ne 0 ]
+    then
+        echo "$2 is failed please check"
+        exit 1
+    else
+        echo "$2 is success"
+
+    fi
+}
+
+CHECK_ROOT
 
 dnf list installed git
 
@@ -18,14 +34,7 @@ echo "git is not installed please install git"
 
 dnf install git -y
 
-if [ $? -ne 0 ]
-then
-echo "git installation is failed please check"
-exit 1
-else
-echo "git installation is success"
-
-fi
+VALIDATION $? "mysql installtion"
 
 else
 echo "git is already installed"
@@ -40,14 +49,7 @@ echo "mysql is not installed please install mysql"
 
 dnf install mysql
 
-if [ $? -ne 0 ]
-then
-echo "mysql installation is failed please check"
-exit 1
-else
-echo "mysql installation is success"
-
-fi
+VALIDATION $? "mysql installtion"
 
 else
 echo "mysql is already installed"
