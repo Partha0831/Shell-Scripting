@@ -33,7 +33,7 @@ echo "git is not installed please install git"
 
 dnf install git -y
 
-VALIDATION $? "mysql installtion"
+VALIDATE $? "mysql installtion"
 
 else
 echo "git is already installed"
@@ -48,7 +48,7 @@ echo "mysql is not installed please install mysql"
 
 dnf install mysql -y
 
-VALIDATION $? "mysql installtion"
+VALIDATE $? "mysql installtion"
 
 else
 echo "mysql is already installed"
