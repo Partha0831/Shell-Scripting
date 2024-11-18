@@ -1,30 +1,25 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
-# above are color codes they are fixed. apply colors to the output result for better  view
+
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-
-        echo "please run as root user"
+        echo "Please run this script with root priveleges"
         exit 1
-
     fi
-    }
+}
 
-
-VALIDATION(){
+VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is..$R failed $N please check"
+        echo -e "$2 is...$R FAILED $N"
         exit 1
     else
-        echo "$2 is....$G success $N"
-# $1 and $2 are inputs passed in the function call 1 input and 2 input
+        echo -e "$2 is... $G SUCCESS $N"
     fi
 }
 
