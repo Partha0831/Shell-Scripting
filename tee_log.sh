@@ -50,7 +50,7 @@ dnf list installed $package &>/dev/null
 if [ $? -ne 0 ]
 then
 echo "Please install $package" | tee -a $File_Name
-dnf install $package -y
+dnf install $package -y &>>$File_Name
 VALIDATE
 else
 echo -e "$package...$G is alteady Installed $N" | tee -a $File_Name
