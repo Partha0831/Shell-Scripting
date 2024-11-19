@@ -6,7 +6,7 @@ LOG_Folder="/var/log/Shell-Logs"
 Log_File=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 File_Name="$LOG_Folder-$Log_File-$TIMESTAMP.log"
-mkdir -p $File_Name
+mkdir -p $LOG_Folder
 
 R="\e[31m"
 G="\e[32m"
