@@ -35,6 +35,7 @@ then
 echo "Please install $package"
 dnf install $package -y
 VALIDATE
+fi
 done
 
 
