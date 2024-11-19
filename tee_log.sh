@@ -24,9 +24,9 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $USERID -ne 0 ]
     then
-        echo -e "$package...$R installation failed $N " &>>$File_Name
+        echo -e "$package...$R installation failed $N " | tee -a $File_Name
     else
-        echo -e "$package...$G installation Success $N " &>>$File_Name
+        echo -e "$package...$G installation Success $N " | tee -a $File_Name
     fi
 }
 USAGE(){
@@ -37,7 +37,7 @@ USAGE(){
 
  CHECK_ROOT
 
-echo "Script Execution Started at : $(date)" &>>$File_Name
+echo "Script Execution Started at : $(date)" | tee -a $File_Name
 
  if [ $# -eq 0 ]
  then
@@ -49,11 +49,11 @@ do
 dnf list installed $package &>/dev/null
 if [ $? -ne 0 ]
 then
-echo "Please install $package" &>>$File_Name
+echo "Please install $package" | tee -a $File_Name
 dnf install $package -y
 VALIDATE
 else
-echo -e "$package...$G is alteady Installed $N" &>>$File_Name
+echo -e "$package...$G is alteady Installed $N" | tee -a $File_Name
 fi
 done
 
