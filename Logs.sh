@@ -10,7 +10,7 @@ N="\e[0m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-        echo -e "$RPlease run Script with Root Credential $N "
+        echo -e ("$RPlease run Script with Root Credential $N ")
         exit 1
     fi
 }
@@ -18,9 +18,9 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $USERID -ne 0 ]
     then
-        echo -e "$package...$R installation failed $N "
+        echo -e ("$package...$R installation failed $N ")
     else
-        echo -e "$package...$G installation Success $N "
+        echo -e ("$package...$G installation Success $N ")
     fi
 }
 
@@ -32,9 +32,11 @@ do
 dnf list installed $package
 if [ $? -ne 0 ]
 then
-echo "Please install $package"
+echo ("Please install $package")
 dnf install $package -y
 VALIDATE
+else
+echo -e ("$package...$G is alteady Installed $N")
 fi
 done
 
