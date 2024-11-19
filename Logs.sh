@@ -46,7 +46,7 @@ do
 dnf list installed $package
 if [ $? -ne 0 ]
 then
-echo "Please install $package" &>>File_Name
+echo "Please install $package" &>>$File_Name
 dnf install $package -y
 VALIDATE
 else
