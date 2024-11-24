@@ -49,7 +49,7 @@ do
 dnf list installed $package &>/dev/null
 if [ $? -ne 0 ]
 then
-echo "Please install $package" | tee -a $File_Name
+echo "Please $R install $package $N" | tee -a $File_Name
 dnf install $package -y &>>$File_Name
 VALIDATE
 else
