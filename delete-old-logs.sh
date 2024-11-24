@@ -18,3 +18,9 @@ fi
 
 Files=$(find . $Source_Dir -name "*.log")
 echo "Files: $Files"
+
+while IFS= read -r File
+do
+echo "Deleting $File"
+rm -rf $File
+done <<< $Files
