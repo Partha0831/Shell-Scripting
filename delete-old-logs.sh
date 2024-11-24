@@ -4,7 +4,7 @@
 #find . -name "*.log" to file files
 #find . -name "*.log" -mtime +14 to find backdated files
 
-Source_Dir=/log
+Source_Dir=\log
 G="\e[32m"
 R="\e[32m"
 N="\e[0m"
