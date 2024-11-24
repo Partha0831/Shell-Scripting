@@ -7,7 +7,7 @@
 Source_Dir=/log
 G="\e[32m"
 R="\e[32m"
-N="\0m"
+N="\e[0m"
 
 if[ -d $Source_Dir ] # -d for directory
 then
