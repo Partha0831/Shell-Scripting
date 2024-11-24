@@ -4,12 +4,12 @@
 #find . -name "*.log" to file files
 #find . -name "*.log" -mtime +14 to find backdated files
 
-Source_Dir=\log
+Source_Dir=/log
 G="\e[32m"
 R="\e[32m"
 N="\e[0m"
 
-if[ -d $Source_Dir ] # -d for directory
+if [ -d $Source_Dir ] # -d for directory
 then
 echo -e "$Source_Dir $G Exists $N"
 else
