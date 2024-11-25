@@ -34,3 +34,10 @@ fi
 
 Files=$(find $Source_Dir -name "*.log" -mtime +$Days)
 echo "$Files"
+
+if [ ! -z $Files ]
+then
+echo "Files are found"
+else
+echo "Files not are found"
+fi
