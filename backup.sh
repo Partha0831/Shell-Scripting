@@ -42,12 +42,12 @@ echo "Files are found"
 find $Source_Dir -name "*.log" -mtime +$Days | zip "$Zip_File" -@
 if [ -f $Zip_File ]
 then
-echo -e "Zipping File is $G Suces $N"
+echo -e "Zipping File is $G Success $N"
 while IFS= read -r file
 do
 echo "deleting $file"
 rm -rf $file
-done<<<Files
+done <<< Files
 else
 echo -e "Zipping files is $R Failed $N"
 fi
