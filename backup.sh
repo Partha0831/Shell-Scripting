@@ -51,8 +51,6 @@ done<<<Files
 else
 echo -e "Zipping files is $R Failed $N"
 fi
-then
-echo "echo zipping the file"
 else
 echo "Files not are found"
 fi
