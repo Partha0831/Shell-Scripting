@@ -17,7 +17,7 @@ echo -e "$Source_Dir $G does not Exists $N"
 exit 1
 fi
 
-Files=$(find . $Source_Dir -name "*.log")
+Files=$(find . $Source_Dir -name "*.log" -mtime +14)
 echo "Files: $Files"
 
 while IFS= read -r File #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
@@ -25,3 +25,7 @@ do
 echo "Deleting $File"
 rm -rf $File
 done <<< $Files
+
+# crontab is used schedule a shell script over a periodic time
+# to schedule * * * * * sh path/script/name
+# schedule format minute,hour,day of he month,month of the year,day of the week
